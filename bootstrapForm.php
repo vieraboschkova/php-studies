@@ -1,9 +1,66 @@
 <?php
+    $usernamesArray = array(
+        [
+            "id"=> 1,
+            "username"=> "Bret",
+            "email"=> "Sincere@april.biz"
+        ],
+        [
+            "id"=> 2,
+            "username"=> "Antonette",
+            "email"=> "Shanna@melissa.tv",
+        ],
+        [
+            "id"=> 3,
+            "username"=> "Samantha",
+            "email"=> "Nathan@yesenia.net",
+        ],
+        [
+            "id"=> 4,
+            "username"=> "Karianne",
+            "email"=> "Julianne.OConner@kory.org",
+        ],
+        [
+            "id"=> 5,
+            "username"=> "Kamren",
+            "email"=> "Lucio_Hettinger@annie.ca",
+        ],
+        [
+            "id"=> 6,
+            "username"=> "Leopoldo_Corkery",
+            "email"=> "Karley_Dach@jasper.info",
+        ],
+        [
+            "id"=> 7,
+            "username"=> "Elwyn.Skiles",
+            "email"=> "Telly.Hoeger@billy.biz",
+        ],
+        [
+            "id"=> 8,
+            "username"=> "Maxime_Nienow",
+            "email"=> "Sherwood@rosamond.me",
+        ],
+        [
+            "id"=> 9,
+            "username"=> "Delphine",
+            "email"=> "Chaim_McDermott@dana.io",
+        ],
+        [
+            "id"=> 10,
+            "username"=> "Moriah.Stanton",
+            "email"=> "Rey.Padberg@karina.biz",
+        ]
+    );
+
     $errName = '';
     $errEmail = '';
     $errPassword = '';
     $errPasswordRepeat = '';
     $result = '';
+
+
+    $test = $usernamesArray;
+
 
 	if (isset($_POST["submit"])) {
 		$name = $_POST['name'];
@@ -32,6 +89,10 @@
 		}
 
         // VALIDATE INPUTS
+        $usernameIsUnique = true;
+        // foreach($usernamesArray as $i => $i_value) {
+        //     echo $i_value->name;
+        // }
         // check if the username is registered
         // check if the email is registered
         // check if passwords are the same
@@ -39,9 +100,10 @@
 
         
 // If there are no errors, send the email
-if (!$errName && !$errEmail && !$errPassword && !$errPasswordRepeat) {
+    if (!$errName && !$errEmail && !$errPassword && !$errPasswordRepeat) {
     // handle the form
-    echo "sent!";
+        echo "sent!";
+
 	// if (mail ($to, $subject, $body, $from)) {
 	// 	$result='<div class="alert alert-success">Thank You! I will be in touch</div>';
 	// } else {
@@ -61,7 +123,11 @@ if (!$errName && !$errEmail && !$errPassword && !$errPasswordRepeat) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   </head>
   <body>
+
   	<div class="container">
+        <div class="col-sm-10 col-sm-offset-2">
+			<?php echo "<pre>"; print_r($test); ?>	
+		</div>
   		<div class="row">
   			<div class="col-md-6 col-md-offset-3">
   				<h1 class="page-header text-center">Registration Form</h1>
